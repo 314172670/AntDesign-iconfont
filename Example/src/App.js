@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import 'ant-design-pro/dist/ant-design-pro.css'; 
 
-import { Layout, Menu,Icon,Pagination,LocaleProvider ,Table ,Divider} from 'antd';
-import enUS from 'antd/lib/locale-provider/en_US';
-import './App.less';
+import { Layout, Menu,Icon,Pagination,LocaleProvider ,Table ,Divider,TimePicker } from 'antd';
+
+//语言包
+import enUS from 'antd/lib/locale-provider/en_US'; //英文
+import zhCN from 'antd/lib/locale-provider/zh_CN'; //中文
+
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
@@ -102,9 +105,15 @@ class App extends Component {
       <Layout style={{ padding: '0 24px 24px' }}>
     
         <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
-              <LocaleProvider locale={enUS}>
+              <LocaleProvider locale={zhCN}>
+                <div>
                 <Pagination defaultCurrent={1} total={50} showSizeChanger />
+                <br/>
+                <TimePicker use12Hours />
+                 <br/>
+                </div>
               </LocaleProvider>
+              <br/>
               <Table columns={columns} dataSource={data}/>
         </Content>
       </Layout>
