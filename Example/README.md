@@ -24,6 +24,8 @@
 
  	![](https://i.imgur.com/QlSjty4.png)
 	
+- Ant国际化
+
 
 - less配置
 
